@@ -1,0 +1,22 @@
+.naz-button{
+    border: 0;
+    border-radius: 20px;
+    padding: 1% 2% 1% 2%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: aliceblue;
+}
+
+.naz-button--small{
+    font-size: 0.8rem;
+}
+
+.naz-button--large{
+    font-size: 1.5rem;
+}
+
+@media (orientation:portrait){
+    .naz-button{
+        padding: 2% 5% 2% 5%;
+    }
+}

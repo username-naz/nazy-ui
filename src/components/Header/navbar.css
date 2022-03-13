@@ -1,0 +1,267 @@
+.nav{
+    position: sticky;
+    display:flex;
+    width:100%;
+    padding: 0.5%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3b3b3b;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 2px 3px 5px 0.5px rgba(46, 46, 46, 0.473);
+}
+
+.nav--dark{
+    background-color: #3b3b3b;
+    color: antiquewhite;
+}
+.nav--light{
+    background-color: #f1f1f1;
+    color: rgb(0, 0, 0);
+}
+
+.nav .ham{
+    display: none;
+    position: absolute;
+    left: -200%;
+}
+
+.nav h4{
+    display: inline;
+    font-size: 1.2rem;
+}
+
+.nav--dark h4{
+    color: rgb(209, 209, 209);
+    
+}
+
+.nav--light h4{
+    color: rgb(109, 109, 109);
+
+}
+.nav h4:hover{
+    transform: scale(102%, 102%);
+    transition:100ms;
+    cursor: pointer;
+}
+
+.nav img{
+    height:2rem;
+}
+
+.nav-list{
+    display: inline-block;
+    height: 10%;
+    width: 70%;
+}
+.nav a{
+    text-decoration: none;
+    padding: 2%;
+    font-weight: 600;
+    display: inline;
+}
+
+.nav--dark a{
+    color: rgb(209, 209, 209);
+    
+}
+
+.nav--light a{
+    color: rgb(65, 65, 65);
+
+}
+
+.nav--dark a:hover{
+    background-color: rgba(124, 124, 124, 0.397);
+    transition: 200ms;
+    
+}
+
+.nav--light a:hover{
+    background-color: rgb(219, 219, 219);
+    transition: 200ms;
+
+}
+
+
+.drop-down{
+    position: absolute;
+    display: inline;
+    width: 8%;
+    padding: 1%;
+    transform: translate(-80%,10%);
+    box-shadow: 1px 1px 3px rgba(46, 46, 46, 0.555);
+    display: none;
+}
+
+.nav--dark .drop-down{
+    background-color: rgb(49, 49, 49);
+    color: rgb(209, 209, 209);
+    
+}
+
+.nav--light .drop-down{
+    color: rgb(65, 65, 65);
+    background-color: #e7e7e7;
+
+}
+
+.drop-down a{
+    display: block;
+    padding: 20%;
+    text-align: center;
+}
+
+.droppable:hover .drop-down{
+    display: inline;
+}
+
+.nav .backdrop{
+    display: none;
+}
+
+@media (orientation:portrait){
+    .nav{
+        position: fixed;
+        display: block;
+        top:0;
+        left:0;
+        height: 100%;
+        width:50%;
+        padding: 5%;
+        padding-top: 10%;
+        /* box-shadow: 2px 0px 3px rgb(46, 46, 46); */
+    }
+
+    .nav img{
+        display: block;
+        width: 40%;
+        height: auto;
+        margin-left: 30%;
+    }
+
+    .nav h4{
+        font-size: 1.8rem;
+        margin-top: 0;
+        display: block;
+        text-align: center;
+    }
+
+    .nav-list{
+        width: 100%;
+        padding: 5%;
+    }
+
+    .nav-list a{
+        font-size: 1.1rem;
+        display: block;
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 4%;
+        margin-left: -5%;
+        border-radius: 5px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .nav--dark .nav-list a{
+        background-color: rgb(85, 85, 85);
+    }
+    .nav--light .nav-list a{
+        background-color: rgb(230, 230, 230);
+    }
+
+    .drop-down{
+        position: relative;
+        width: auto;
+        height: auto;
+        padding: 0;
+        transform: translate(0,0);
+        box-shadow: 0 0 0 rgb(46, 46, 46);
+        margin-top: 5%;
+        
+    }
+
+    .nav--dark .drop-down{
+        background-color: rgba(49, 49, 49, 0);
+    }
+    .nav--light .drop-down{
+        background-color: rgba(187, 187, 187, 0);
+    }
+
+    .drop-down a{
+        display: block;
+        padding: 2%;
+        width: 80%;
+        margin-left: 10%;
+        text-align: center;
+    }
+    
+    .droppable:hover .drop-down{
+        display: block;
+    }
+
+    .nav .ham{
+        display: block;
+        position: absolute;
+        font-size: 2rem;
+        padding: 2%;
+        margin-top: 2%;
+        left: 100%;
+        border-radius: 0 5px 5px 0;
+        box-shadow: 1px 1px 3px rgba(46, 46, 46, 0.616);
+        top: 0;
+    }
+    
+    .nav--dark .ham{
+        color: aliceblue;
+        background-color: rgb(59, 59, 59);
+        
+    }
+    
+    .nav--light .ham{
+        color: rgb(68, 68, 68);
+        background-color: rgb(243, 243, 243);
+        
+    }
+    
+    .open{
+        left: 0;
+        animation: nav-open 300ms 1;
+    }
+    .closed{
+        left:-60%;
+        animation: nav-close 100ms 1;
+    }
+
+    .nav .backdrop{
+        display: block;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.37);
+    }
+
+
+    @keyframes nav-open{
+        100%{
+            left:0
+        }
+
+        0%{
+            left: -60%;
+        }
+    }
+
+    @keyframes nav-close{
+        100%{
+            left:-60%
+        }
+
+        0%{
+            left: 0;
+        }
+    }
+    
+}
