@@ -9,6 +9,7 @@ export const Button = ({color, size, onClick, label}) =>{
     );
 }
 
+
 Button.protoTypes = {
     label:PropTypes.string,
     color:PropTypes.string,
@@ -17,8 +18,9 @@ Button.protoTypes = {
 }
 
 Button.defaultProps = {
-     label:'Click',
+    label:'Click',
     color:'#2da9f1',
     size:'medium',
     onClick:undefined
 }
+export default Button;
